@@ -27,7 +27,8 @@ export default function PhotoList (){
                 <PhotoCard
                 title={photos.title}
                 url={photos.url}
-                date={photos.date}/>
+                date={photos.date}
+                explanation={photos.explanation}/>
         </div>
     )
 }
