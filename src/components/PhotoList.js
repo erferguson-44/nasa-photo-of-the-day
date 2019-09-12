@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 
 import axios from "axios";
 import PhotoCard from "./PhotoCard";
+import styled from 'styled-components';
 
 export default function PhotoList (){
 
@@ -9,7 +10,7 @@ export default function PhotoList (){
 
     useEffect(() => {
         axios
-        .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
+        .get(`https://api.nasa.gov/planetary/apod?api_key=prWLscQbjlZ18HX9Ebuyr04zjOh85gI1amra8xUd`)
 
         .then(response => {
             const photos = response.data;
@@ -25,8 +26,8 @@ export default function PhotoList (){
     return (
         <div className="photo">
                 <PhotoCard
-                title={photos.title}
-                url={photos.url}
+                header={photos.title}
+                urlSrc={photos.url}
                 date={photos.date}
                 explanation={photos.explanation}/>
         </div>
