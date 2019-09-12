@@ -10,8 +10,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>NASA!</h1>
-      <p>We do Photos too.</p>
+      {/* <h1>NASA!</h1>
+      <p>We do Photos too.</p> */}
       <PhotoList/>
       
       {/* <p>

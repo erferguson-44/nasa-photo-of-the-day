@@ -4,6 +4,9 @@ import axios from "axios";
 import PhotoCard from "./PhotoCard";
 import styled from 'styled-components';
 
+
+
+
 export default function PhotoList (){
 
     const [photos, setPhotos] = useState([])
@@ -29,7 +32,7 @@ export default function PhotoList (){
                 header={photos.title}
                 urlSrc={photos.url}
                 date={photos.date}
-                explanation={photos.explanation}/>
+                description={photos.explanation}/>
         </div>
     )
 }
