@@ -1,6 +1,7 @@
 import React from "react";
 
-import styled from 'styled-components';
+import {Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+
 
 const PhotoCard = ({header, date, photographer, description, urlSrc, id}) => {
 
@@ -10,15 +11,37 @@ const PhotoCard = ({header, date, photographer, description, urlSrc, id}) => {
             backgroundRepeat:`no-repeat`,
             backgroundSize: `cover`}
         }>
-            <div className="divContainer"> 
-                <h1><a href="https://www.nasa.gov/">NASA!</a></h1>
-                <h1>NASA!</h1>
-                <p>( We do Photos too! )</p>
-                <h2>title: {header}</h2>
-                <p>{date}</p>
-                <p>{photographer}</p>
-                <p>{description}</p>
-                <p>{id}</p>
+        <div style={{paddingTop:"75vh"}}>
+
+            <div className="topRow">
+                <h2 style={{
+                    fontSize: '3rem', 
+                    fontWeight: "100", 
+                    margin: "0%"}}>04:31</h2>
+            </div>
+
+            <h3 style={{
+                fontSize: '1rem', 
+                fontWeight: "300", 
+                margin: "0%"}}>{header}
+            </h3>
+            <p style={{
+                fontSize: '.5rem', 
+                fontWeight: "300", 
+                margin: "0%"
+            }}>NASA photo of the day by:{photographer}
+            </p>
+
+            <button onClick={modalClick}>Description</button>
+            <Modal isOpen={modal} toggle={modalClick} >
+                <ModalHeader>About the Image</ModalHeader> 
+                <ModalBody>
+                 {photographer}
+                </ModalBody>  
+                <ModalFooter>
+                    <Button color="secondary" onClick={modalClick}>Cancel</Button>
+                </ModalFooter>
+            </Modal>
            </div>
         </div>
     )

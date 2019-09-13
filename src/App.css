@@ -30,18 +30,6 @@
   justify-content: center;
 }
 
-.divContainer{
-  width:50%;
-}
-
-.divContainer h1{
-  color:#FC3D21;
-}
-.divContainer a:link{
-  text-decoration: none;
-  color:#FC3D21;
-
-}
 
 @keyframes App-logo-spin {
   from {

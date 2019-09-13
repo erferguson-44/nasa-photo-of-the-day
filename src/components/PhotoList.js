@@ -4,12 +4,21 @@ import axios from "axios";
 import PhotoCard from "./PhotoCard";
 import styled from 'styled-components';
 
-
-
-
 export default function PhotoList (){
 
     const [photos, setPhotos] = useState([])
+
+    const [modal, setModal] = useState(false);
+
+    const modalClick = () => {
+        console.log('The modal button is being clicked!');
+        if (modal === false){
+            setModal(true);
+        } else {
+            setModal(false);
+        }
+        console.log('The modal is ', modal);
+    }
 
     useEffect(() => {
         axios
@@ -32,7 +41,8 @@ export default function PhotoList (){
                 header={photos.title}
                 urlSrc={photos.url}
                 date={photos.date}
-                description={photos.explanation}/>
+                description={photos.explanation}
+                photographer={photos.copyright}/>
         </div>
     )
 }
